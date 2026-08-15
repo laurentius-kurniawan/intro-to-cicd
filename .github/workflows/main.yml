@@ -15,8 +15,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install dependancies
-        run: npm install
-      - name: Run tests
-        run: npm test
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: cd dunkdance-cd && npm install
+    - name: Run tests (no watch)
+      run: cd dunkdance-cd && CI=true npm test
